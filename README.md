@@ -1,39 +1,38 @@
-# Marlowe Vineyard — site vitrine
+# Marlowe Vineyard
 
-Site public du domaine viticole **Marlowe Vineyard**, entreprise fictive du serveur GTA RP **FlashbackFA**.
+Tout ce qui fait tourner le domaine viticole **Marlowe Vineyard**,
+entreprise fictive du serveur GTA RP **FlashbackFA**.
+
+Ce dépôt contient deux projets distincts, qui ne s'hébergent pas au même endroit.
+
+| Dossier | Ce que c'est | Technologie | Où ça tourne |
+|---|---|---|---|
+| [`site/`](site/) | Le site public : présentation, catalogue, recrutement | HTML, CSS, JS — un seul fichier | Hébergement statique |
+| [`espace-membre/`](espace-membre/) | L'outil de gestion interne : effectif, primes, facturation | PHP 8 + MySQL | Serveur PHP |
 
 En ligne : <https://marlowe-vineyard.mauries-inc.com/>
 
-## Ce que contient ce dépôt
+## Pourquoi deux projets dans un seul dépôt
 
-| Chemin | Rôle |
-|---|---|
-| `index.html` | Le site entier — structure, style et scripts dans un seul fichier |
-| `assets/` | Logo, favicon, bannière de partage |
-| `assets/catalogue/` | Les 48 pages du catalogue, en pleine taille et en vignettes |
+Ils parlent de la même entreprise, évoluent ensemble, et le site public
+renvoie vers l'espace membre. Les garder côte à côte évite d'avoir à
+synchroniser deux historiques.
 
-Le site est **entièrement statique** : pas de base de données, pas de serveur à faire tourner.
-Il suffit de déposer ces fichiers sur n'importe quel hébergeur, ou d'ouvrir `index.html`
-directement dans un navigateur.
+En revanche ils ne se déploient pas de la même façon :
 
-## Modifier le site
+- **`site/`** ne demande aucun serveur. Déposer les fichiers quelque part suffit.
+- **`espace-membre/`** a besoin de PHP et d'une base MySQL. Il ne peut pas être
+  hébergé sur GitHub Pages, qui ne sert que des fichiers statiques.
 
-Tout ce qui change au quotidien est regroupé en haut du bloc `<script>`, dans l'objet `CONFIG` :
+## Règle de sécurité
 
-```js
-const CONFIG = {
-  discord      : "https://discord.gg/…",   // invitation Discord
-  telephone    : "923",                     // standard du domaine
-  espaceMembre : "http://…",                // outil de gestion interne
-  ...
-};
-```
+Le fichier `espace-membre/secrets.php` — mot de passe de la base, clé de
+chiffrement, secret Discord — **n'est jamais versionné**. Il est créé sur le
+serveur par la page d'installation et n'existe qu'à cet endroit.
+Le `.gitignore` l'écarte, ainsi que toutes les sauvegardes `.sql`.
+Ne pas contourner cette règle.
 
-Le catalogue des 61 produits vit dans la constante `CATALOGUE`, juste en dessous,
-et les 8 gammes dans `GAMMES`.
+## Par où commencer
 
-## L'espace membre
-
-L'outil de gestion interne (effectif, primes, facturation) est un projet séparé,
-en PHP : voir le dépôt **MarloweEspaceMembre**. Il ne peut pas être hébergé ici,
-car GitHub Pages ne sert que des fichiers statiques.
+- Modifier le site public → [`site/README.md`](site/README.md)
+- Installer ou reprendre l'outil de gestion → [`espace-membre/README.md`](espace-membre/README.md)

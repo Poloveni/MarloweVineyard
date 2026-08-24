@@ -1,7 +1,27 @@
-# Fichiers créés par le système, sans intérêt pour le projet
+# ============================================================
+#  NE JAMAIS PUBLIER
+# ============================================================
+# secrets.php contient le mot de passe de la base, la clé de
+# chiffrement et le secret Discord. Il est généré sur le serveur
+# par installation.php et ne doit exister nulle part ailleurs.
+secrets.php
+espace-membre/secrets.php
+
+# Sauvegardes de la base : elles contiennent toutes les données.
+sauvegardes/
+*.sql
+
+# ============================================================
+#  Fichiers de travail
+# ============================================================
+*.zip
+*.log
+tmp/
+logs/
+espace-membre/webroot/_test-bdd.php
+espace-membre/webroot/_diag.php
+
+# Système
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Archives de travail
-*.zip
