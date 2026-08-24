@@ -1,0 +1,7 @@
+# Fichiers créés par le système, sans intérêt pour le projet
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives de travail
+*.zip

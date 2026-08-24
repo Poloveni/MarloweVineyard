@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🍇 MARLOWE VINEYARD — Domaine viticole de Tongva Hills</title>
+<meta name="description" content="Marlowe Vineyard, domaine viticole familial des Tongva Hills. Grands crus, livraison sur tout San Andreas, recrutement ouvert. Entreprise RP sur FlashbackFA.">
+<meta name="theme-color" content="#0b2620">
+
+<!-- Aperçu quand on colle le lien sur Discord / réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marlowe Vineyard">
+<meta property="og:title" content="🍇 MARLOWE VINEYARD — Domaine viticole de Tongva Hills">
+<meta property="og:description" content="Grands crus des Tongva Hills. Livraison 24 h sur tout San Andreas. Recrutement ouvert.">
+<meta property="og:url" content="https://marlowe-vineyard.mauries-inc.com/">
+<meta property="og:image" content="https://marlowe-vineyard.mauries-inc.com/assets/banner-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://marlowe-vineyard.mauries-inc.com/">
+
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Applique le thème AVANT le rendu pour éviter le flash blanc -->
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try{
+    var t = localStorage.getItem('mv_theme');
+    if(t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+      document.documentElement.classList.add('dark');
+    }
+  }catch(e){}
+})();
+</script>
+
+<style>
+/* ============================================================
+   1. JETONS DE DESIGN  (change une couleur ici = tout le site suit)
+   ============================================================ */
+:root{
+  /* Verts du domaine */
+  --green-900:#061713;
+  --green-800:#0b2620;
+  --green-700:#0f3129;
+  --green-600:#16473a;
+
+  /* Ors */
+  --gold:#c9a227;
+  --gold-lt:#e6c976;
+  --gold-dk:#9a7a1c;
+
+  /* Vin */
+  --wine:#7b1e2b;
+
+  /* Surfaces & texte (thème clair par défaut) */
+  --paper:#faf7f0;
+  --surface:#ffffff;
+  --surface-2:#f3efe4;
+  --ink:#14231e;
+  --muted:#5f6f68;
+  --line:#e4ddcc;
+
+  /* Accent actif */
+  --accent:var(--gold-dk);
+  --on-dark:#f2ece0;
+  --on-dark-muted:#a9b7b0;
+
+  /* Rythme */
+  --r-sm:8px;
+  --r-md:14px;
+  --r-lg:22px;
+  --r-pill:999px;
+  --gutter:6vw;
+  --section-y:clamp(64px, 9vw, 118px);
+
+  --shadow-1:0 2px 10px rgba(6,23,19,.06);
+  --shadow-2:0 14px 40px rgba(6,23,19,.10);
+  --shadow-3:0 26px 70px rgba(6,23,19,.18);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html.dark{
+  --paper:#0a1c17;
+  --surface:#0e2620;
+  --surface-2:#0b2019;
+  --ink:#eae5d8;
+  --muted:#9aaba3;
+  --line:#1d3b32;
+  --accent:var(--gold-lt);
+  --shadow-1:0 2px 10px rgba(0,0,0,.35);
+  --shadow-2:0 14px 40px rgba(0,0,0,.45);
+  --shadow-3:0 26px 70px rgba(0,0,0,.55);
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .35s var(--ease), color .35s var(--ease);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:-.01em;
+  margin:0 0 .5em;
+}
+h1{font-size:clamp(2.6rem,6vw,4.6rem)}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+h3{font-size:clamp(1.25rem,2vw,1.6rem)}
+p{margin:0 0 1em}
+
+.wrap{max-width:1200px;margin-inline:auto;width:100%}
+section{padding:var(--section-y) var(--gutter)}
+
+.eyebrow{
+  font-family:'Cinzel',serif;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .9rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.5;max-width:120px}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{display:none}
+.eyebrow.center::before{content:"";flex:none;width:7px;height:7px;background:currentColor;transform:rotate(45deg);opacity:.75}
+
+.lede{font-size:1.12rem;color:var(--muted);max-width:62ch}
+
+/* Boutons ------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.85rem 1.6rem;
+  border-radius:var(--r-pill);
+  font-weight:600;font-size:.94rem;
+  letter-spacing:.01em;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, color .25s, border-color .25s;
+  border:1px solid transparent;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold) 55%,var(--gold-dk));
+  color:#241a04;
+  box-shadow:0 8px 24px rgba(201,162,39,.32);
+}
+.btn-gold:hover{box-shadow:0 14px 34px rgba(201,162,39,.44)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-onDark{border-color:rgba(230,201,118,.45);color:var(--on-dark)}
+.btn-onDark:hover{border-color:var(--gold-lt);background:rgba(230,201,118,.10)}
+
+/* ============================================================
+   3. NAVIGATION
+   ============================================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;gap:1.2rem;
+  padding:.85rem var(--gutter);
+  background:rgba(11,38,32,.72);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid rgba(230,201,118,.14);
+  transition:background .3s, padding .3s, border-color .3s;
+}
+.nav.scrolled{background:rgba(6,23,19,.94);padding-block:.6rem;border-color:rgba(230,201,118,.22)}
+.brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}
+.brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5));animation:float 6s ease-in-out infinite}
+.brand-txt{font-family:'Cinzel',serif;font-weight:600;font-size:1.02rem;letter-spacing:.14em;color:#f2ece0;line-height:1.15}
+.brand-txt b{display:block;font-weight:700;color:var(--gold-lt);font-size:.74rem;letter-spacing:.3em}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+.nav-links{display:flex;align-items:center;gap:.15rem}
+.nav-links a{
+  padding:.5rem .8rem;border-radius:var(--r-pill);
+  font-size:.88rem;font-weight:500;color:#d6d0c2;
+  transition:color .2s, background .2s;
+}
+.nav-links a:hover{color:var(--gold-lt);background:rgba(230,201,118,.09)}
+.nav-cta{display:flex;align-items:center;gap:.5rem}
+.btn-member{
+  padding:.6rem 1.1rem;border-radius:var(--r-pill);
+  font-size:.85rem;font-weight:600;
+  color:#f7f2e4;border:1px solid rgba(230,201,118,.5);
+  background:rgba(230,201,118,.08);
+  animation:glow 4s ease-in-out infinite;
+  transition:background .25s, transform .25s var(--ease);
+}
+.btn-member:hover{background:rgba(230,201,118,.2);transform:translateY(-2px)}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(230,201,118,.28)}50%{box-shadow:0 0 0 9px rgba(230,201,118,0)}}
+.icon-btn{
+  width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;font-size:1rem;
+  border:1px solid rgba(230,201,118,.28);color:#f2ece0;
+  transition:transform .35s var(--ease), background .25s;
+}
+.icon-btn:hover{background:rgba(230,201,118,.14);transform:rotate(18deg)}
+.burger{display:none;font-size:1.4rem;color:#f2ece0;padding:.3rem .5rem}
+
+@media(max-width:1040px){
+  .burger{display:block}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(6,23,19,.98);
+    border-bottom:1px solid rgba(230,201,118,.2);
+    padding:.5rem var(--gutter) 1.1rem;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.8rem .4rem;border-radius:var(--r-sm)}
+}
+@media(max-width:640px){
+  .brand-txt{font-size:.9rem}
+  .btn-member{display:none}
+}
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;
+  display:grid;place-items:center;
+  padding:120px var(--gutter) 80px;
+  overflow:hidden;
+  background:var(--green-900);
+}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(6,23,19,.55) 0%,rgba(6,23,19,.15) 40%,rgba(6,23,19,.86) 100%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;max-width:1200px;width:100%}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold-lt);
+  border:1px solid rgba(230,201,118,.35);
+  background:rgba(6,23,19,.45);
+  padding:.45rem 1rem;border-radius:var(--r-pill);
+  margin-bottom:1.5rem;
+}
+.hero h1{color:#fbf8f0;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.hero h1 em{
+  font-style:italic;
+  background:linear-gradient(120deg,var(--gold-lt),var(--gold) 45%,#f6e2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{color:#cfd8d2;font-size:1.14rem;max-width:52ch;margin-bottom:2rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2.8rem}
+.hero-stats{display:flex;flex-wrap:wrap;gap:2.4rem}
+.hstat b{
+  display:block;font-family:'Cormorant Garamond',serif;font-weight:700;
+  font-size:2.2rem;line-height:1;
+  background:linear-gradient(120deg,var(--gold-lt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hstat span{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#9fb0a8}
+.hero-art{display:grid;place-items:center}
+.hero-art img{width:min(340px,80%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));animation:float 8s ease-in-out infinite}
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%) rotate(45deg);
+  z-index:3;width:22px;height:22px;
+  border-right:2px solid rgba(230,201,118,.65);
+  border-bottom:2px solid rgba(230,201,118,.65);
+  border-radius:0 0 4px 0;
+  animation:bob 2.2s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translate(-50%,0) rotate(45deg)}50%{transform:translate(-50%,9px) rotate(45deg)}}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-kicker,.hero-actions,.hero-stats{justify-content:center}
+  .hero-sub{margin-inline:auto}
+  .hero-art{display:none}
+}
+
+/* ============================================================
+   5. BLOCS RÉUTILISABLES
+   ============================================================ */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1.4rem}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:2rem 1.7rem;
+  box-shadow:var(--shadow-1);
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+  position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--gold-lt),var(--gold),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);border-color:rgba(201,162,39,.4)}
+.card:hover::before{opacity:1}
+.card .ico{font-size:1.9rem;margin-bottom:.7rem;display:block}
+.card h3{margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* Étapes numérotées */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.2rem;margin-top:3rem;counter-reset:s}
+.step{position:relative;padding:1.6rem 1.4rem 1.4rem;border-radius:var(--r-md);background:var(--surface-2);border:1px solid var(--line)}
+.step::before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;
+  color:var(--accent);opacity:.32;line-height:1;display:block;margin-bottom:.3rem;
+}
+.step h4{font-size:1.1rem;margin:0 0 .3rem}
+.step p{font-size:.88rem;color:var(--muted);margin:0}
+
+/* Sections sombres */
+.dark-sec{background:var(--green-800);color:var(--on-dark);position:relative;overflow:hidden}
+.dark-sec h2{color:#fbf8f0}
+.dark-sec .lede,.dark-sec p{color:var(--on-dark-muted)}
+.dark-sec .eyebrow{color:var(--gold-lt)}
+.grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:radial-gradient(circle at 12% 20%, rgba(230,201,118,.10), transparent 42%),
+                   radial-gradient(circle at 88% 75%, rgba(123,30,43,.16), transparent 46%);
+}
+.dark-sec > *{position:relative;z-index:1}
+
+/* ============================================================
+   6. CATALOGUE PRODUITS
+   ============================================================ */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.cat-toolbar{
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+  margin-top:2.4rem;
+}
+.cat-filters{display:flex;flex-wrap:wrap;gap:.5rem}
+.cat-pill{
+  padding:.5rem 1.1rem;border-radius:var(--r-pill);
+  font-size:.84rem;font-weight:600;color:var(--on-dark);
+  border:1px solid rgba(230,201,118,.28);
+  transition:background .25s,border-color .25s,transform .25s var(--ease),color .25s;
+}
+.cat-pill:hover{transform:translateY(-2px);border-color:var(--gold-lt)}
+.cat-pill[aria-pressed="true"]{background:linear-gradient(135deg,var(--gold-lt),var(--gold));color:#241a04;border-color:transparent}
+.cat-pill .n{opacity:.65;font-weight:500;margin-left:.35rem;font-size:.78rem}
+
+.cat-search input{
+  width:min(260px,60vw);
+  padding:.6rem 1.1rem;border-radius:var(--r-pill);
+  background:rgba(6,23,19,.5);color:var(--on-dark);
+  border:1px solid rgba(230,201,118,.28);
+  font:inherit;font-size:.88rem;outline:none;
+  transition:border-color .25s,background .25s;
+}
+.cat-search input::placeholder{color:rgba(169,183,176,.7)}
+.cat-search input:focus{border-color:var(--gold-lt);background:rgba(6,23,19,.75)}
+
+.cat-count{margin:1.6rem 0 .8rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted)}
+
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:1.2rem}
+.prod{
+  border:1px solid rgba(230,201,118,.2);
+  border-radius:var(--r-lg);
+  padding:1.5rem 1.4rem;
+  background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+  display:flex;flex-direction:column;gap:.5rem;
+  transition:transform .3s var(--ease), border-color .3s, background .3s;
+}
+.prod:hover{transform:translateY(-5px);border-color:rgba(230,201,118,.55);background:linear-gradient(165deg,rgba(230,201,118,.09),rgba(255,255,255,.02))}
+.prod-top{display:flex;align-items:flex-start;gap:.9rem}
+.prod .bottle{
+  flex:none;width:22px;height:56px;border-radius:4px 4px 3px 3px;position:relative;
+  margin-top:14px;box-shadow:inset -5px 0 9px rgba(0,0,0,.4);
+}
+.prod .bottle::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:8px;height:15px;border-radius:3px 3px 0 0;background:inherit}
+.prod .bottle::after{content:"";position:absolute;top:20px;left:-2px;right:-2px;height:18px;background:rgba(242,236,224,.88);border-radius:2px}
+.prod .gamme{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:.15rem}
+.prod h3{color:#fbf8f0;margin:0;font-size:1.22rem;line-height:1.2}
+.prod .meta{font-size:.74rem;color:var(--on-dark-muted);letter-spacing:.04em;margin:.25rem 0 0}
+.prod .desc{font-size:.87rem;color:var(--on-dark-muted);flex:1;margin:.3rem 0 0;line-height:1.55}
+.prod .prices{display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;margin-top:.7rem;padding-top:.8rem;border-top:1px solid rgba(230,201,118,.14)}
+.prod .p1{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold-lt);line-height:1}
+.prod .p2{font-size:.76rem;color:#e0a4b0;border:1px solid rgba(224,164,176,.35);border-radius:var(--r-pill);padding:.16rem .6rem}
+.cat-empty{grid-column:1/-1;text-align:center;padding:3rem 1rem;color:var(--on-dark-muted)}
+
+/* ============================================================
+   6 ter. CATALOGUE EN IMAGES + VISIONNEUSE
+   ============================================================ */
+.pages{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:1rem;margin-top:2.6rem;
+}
+.page-btn{
+  display:block;width:100%;padding:0;position:relative;
+  border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
+  background:var(--surface-2);cursor:zoom-in;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.page-btn img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.page-btn:hover,.page-btn:focus-visible{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--accent)}
+.page-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.page-btn figcaption{
+  padding:.6rem .8rem;font-size:.78rem;color:var(--muted);
+  text-align:left;line-height:1.35;
+}
+.page-btn .num{
+  position:absolute;top:.5rem;left:.5rem;
+  background:rgba(6,23,19,.82);color:var(--gold-lt);
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;
+  padding:.2rem .55rem;border-radius:var(--r-pill);
+}
+
+.lb{
+  position:fixed;inset:0;z-index:200;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  background:rgba(4,14,11,.96);
+  backdrop-filter:blur(6px);
+  padding:clamp(.5rem,3vw,2.5rem);
+  animation:fadeIn .25s var(--ease);
+}
+.lb[hidden]{display:none}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:.9rem;max-width:min(1280px,92vw)}
+.lb-fig img{
+  max-width:100%;max-height:78vh;border-radius:var(--r-md);
+  box-shadow:0 30px 90px rgba(0,0,0,.7);background:#061713;
+}
+.lb-fig figcaption{
+  color:#e8e2d4;font-size:.9rem;text-align:center;
+  display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;justify-content:center;
+}
+.lb-fig figcaption b{
+  font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;
+  color:var(--gold-lt);border:1px solid rgba(230,201,118,.35);
+  border-radius:var(--r-pill);padding:.2rem .7rem;
+}
+.lb-close{
+  position:absolute;top:1rem;right:1.2rem;
+  width:44px;height:44px;border-radius:50%;font-size:1.1rem;
+  color:#f2ece0;border:1px solid rgba(230,201,118,.3);
+  background:rgba(6,23,19,.6);
+  transition:background .25s,transform .25s var(--ease);
+}
+.lb-close:hover{background:rgba(230,201,118,.18);transform:rotate(90deg)}
+.lb-nav{
+  flex:none;width:52px;height:52px;border-radius:50%;
+  border:1px solid rgba(230,201,118,.3);background:rgba(6,23,19,.6);
+  position:relative;transition:background .25s,transform .25s var(--ease);
+}
+.lb-nav::before{
+  content:"";position:absolute;top:50%;left:50%;width:13px;height:13px;
+  border-top:2px solid var(--gold-lt);border-right:2px solid var(--gold-lt);
+}
+.lb-prev::before{transform:translate(-40%,-50%) rotate(-135deg)}
+.lb-next::before{transform:translate(-60%,-50%) rotate(45deg)}
+.lb-nav:hover{background:rgba(230,201,118,.18)}
+.lb-nav:disabled{opacity:.25;cursor:not-allowed}
+@media(max-width:700px){
+  .lb{flex-direction:column}
+  .lb-nav{position:absolute;bottom:1.2rem}
+  .lb-prev{left:22%}
+  .lb-next{right:22%}
+  .lb-fig img{max-height:64vh}
+}
+
+/* ============================================================
+   7. ORGANIGRAMME
+   ============================================================ */
+.org{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:2.6rem}
+.org-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.org-link{width:2px;height:34px;background:linear-gradient(var(--gold),transparent)}
+.org-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:1rem 1.5rem;text-align:center;min-width:172px;
+  box-shadow:var(--shadow-1);transition:transform .3s var(--ease),border-color .3s;
+}
+.org-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.org-card b{display:block;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.15rem}
+.org-card span{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600}
+.org-card.top{background:var(--green-800);border-color:rgba(230,201,118,.35)}
+.org-card.top span{color:#fbf8f0}
+.org-card.top b{color:var(--gold-lt)}
+
+.quote{
+  margin-top:3.2rem;padding:1.6rem 0 1.6rem 1.8rem;
+  border-left:3px solid var(--gold);
+  font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-style:italic;
+  color:var(--muted);max-width:70ch;
+}
+.quote .sig{display:block;margin-top:.9rem;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+
+/* ============================================================
+   8. TARIFS + MARQUEE
+   ============================================================ */
+.price-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem;margin-top:2.6rem}
+.price-card{
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:2rem 1.7rem;background:var(--surface);text-align:center;
+  box-shadow:var(--shadow-1);transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;
+}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);border-color:rgba(201,162,39,.45)}
+.price-card .big{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;line-height:1;
+  background:linear-gradient(120deg,var(--gold),var(--gold-dk));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.price-card .unit{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.marquee{margin-top:3.4rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:1rem;width:max-content;animation:slide 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.chip{
+  border:1px solid var(--line);border-radius:var(--r-pill);
+  padding:.5rem 1.15rem;font-size:.86rem;color:var(--muted);
+  background:var(--surface);white-space:nowrap;
+}
+
+/* ============================================================
+   9. GRADES + SIMULATEUR
+   ============================================================ */
+.table-card{margin-top:2.6rem;border:1px solid rgba(230,201,118,.2);border-radius:var(--r-lg);overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th,td{padding:1rem 1.2rem;text-align:left;font-size:.93rem}
+thead th{
+  font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-lt);background:rgba(230,201,118,.07);font-weight:600;
+}
+tbody tr{border-top:1px solid rgba(230,201,118,.12)}
+tbody tr:hover{background:rgba(230,201,118,.045)}
+td .badge{
+  display:inline-block;padding:.24rem .8rem;border-radius:var(--r-pill);
+  font-size:.76rem;font-weight:600;letter-spacing:.03em;
+}
+.notes{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.note{font-size:.85rem;color:var(--on-dark-muted);border:1px dashed rgba(230,201,118,.3);border-radius:var(--r-md);padding:.6rem 1rem}
+
+.simu{
+  margin-top:3rem;border-radius:var(--r-lg);padding:2.2rem 2rem;
+  border:1px solid rgba(230,201,118,.28);
+  background:linear-gradient(150deg,rgba(230,201,118,.09),rgba(123,30,43,.10));
+}
+.simu h3{
+  color:#fbf8f0;margin-bottom:.3rem;
+  background:linear-gradient(120deg,var(--gold-lt),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.simu .hint{font-size:.88rem;color:var(--on-dark-muted);margin-bottom:1.5rem}
+.grade-pills{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.7rem}
+.gpill{
+  padding:.55rem 1.15rem;border-radius:var(--r-pill);font-size:.86rem;font-weight:600;
+  border:1px solid rgba(230,201,118,.3);color:var(--on-dark);
+  transition:background .25s,border-color .25s,transform .25s var(--ease);
+}
+.gpill:hover{transform:translateY(-2px);border-color:var(--gold-lt)}
+.gpill[aria-pressed="true"]{background:linear-gradient(135deg,var(--gold-lt),var(--gold));color:#241a04;border-color:transparent}
+.slider-row{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.6rem}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;flex:1;min-width:220px;height:6px;border-radius:99px;
+  background:linear-gradient(90deg,var(--gold) var(--pct,30%),rgba(230,201,118,.18) var(--pct,30%));
+  outline:none;
+}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f6e2a8,var(--gold));box-shadow:0 3px 12px rgba(0,0,0,.5);cursor:pointer;border:2px solid #241a04}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--gold);border:2px solid #241a04;cursor:pointer}
+input[type=range]:focus-visible{outline:2px solid var(--gold-lt);outline-offset:6px}
+.slider-val{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold-lt);min-width:5ch;text-align:right}
+.simu-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+.out-box{background:rgba(6,23,19,.4);border:1px solid rgba(230,201,118,.18);border-radius:var(--r-md);padding:1.1rem 1.2rem}
+.out-box span{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:.25rem}
+.out-box b{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;color:#fbf8f0;line-height:1}
+.simu-msg{margin-top:1.2rem;font-size:.92rem;color:var(--gold-lt);min-height:1.5em}
+
+/* ============================================================
+   10. RECRUTEMENT
+   ============================================================ */
+.recruit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.4rem;margin-top:3rem;align-items:start}
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:.9rem}
+.checklist li{display:flex;gap:.8rem;font-size:.96rem;color:var(--muted)}
+.checklist li::before{content:"✦";color:var(--accent);flex:none;font-size:.9rem;line-height:1.7}
+.checklist b{color:var(--ink)}
+.discord-card{
+  border-radius:var(--r-lg);padding:2.2rem;text-align:center;
+  background:linear-gradient(160deg,var(--green-700),var(--green-900));
+  border:1px solid rgba(230,201,118,.28);
+  box-shadow:var(--shadow-2);
+}
+.discord-card svg{width:52px;height:auto;margin-bottom:1rem;fill:#e6c976}
+.discord-card h3{color:#fbf8f0}
+.discord-card p{color:var(--on-dark-muted);font-size:.94rem}
+.slogan{
+  margin:3rem 0 0;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--accent);
+}
+@media(max-width:860px){.recruit-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   11. CONTACT + FOOTER
+   ============================================================ */
+.contact{text-align:center;background:linear-gradient(180deg,var(--green-800),var(--green-900))}
+.contact h2{color:#fbf8f0}
+.contact-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:2rem}
+.cchip{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.8rem 1.5rem;border-radius:var(--r-pill);
+  border:1px solid rgba(230,201,118,.32);color:var(--on-dark);
+  font-size:.93rem;font-weight:500;background:rgba(230,201,118,.05);
+  transition:background .25s,transform .25s var(--ease),border-color .25s;
+}
+.cchip:hover{background:rgba(230,201,118,.14);transform:translateY(-2px);border-color:var(--gold-lt)}
+.cchip svg{width:18px;height:18px;fill:currentColor}
+
+footer{
+  background:var(--green-900);color:#8fa39a;
+  text-align:center;padding:2.4rem var(--gutter);
+  font-size:.83rem;border-top:1px solid rgba(230,201,118,.14);
+}
+footer a{color:var(--gold-lt)}
+footer a:hover{text-decoration:underline}
+.foot-mark{font-family:'Cinzel',serif;letter-spacing:.24em;color:var(--gold-lt);font-size:.78rem;display:block;margin-bottom:.5rem}
+
+/* ============================================================
+   12. APPARITION AU SCROLL + ACCESSIBILITÉ
+   ============================================================ */
+/* L'effet n'existe que si le JavaScript fonctionne : sans lui, tout reste visible. */
+html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--gold);color:#241a04;padding:.7rem 1.2rem;border-radius:0 0 var(--r-sm) 0;font-weight:600;
+}
+.skip:focus{left:0}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<!-- ========================= NAVIGATION ========================= -->
+<nav class="nav" id="nav">
+  <a class="brand" href="#accueil">
+    <img src="assets/logo.png" alt="Blason du domaine Marlowe Vineyard">
+    <span class="brand-txt">MARLOWE<b>Vineyard</b></span>
+  </a>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#domaine">Le Domaine</a>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#feuilleter">Feuilleter</a>
+    <a href="#organisation">Organisation</a>
+    <a href="#clients">Devenir client</a>
+    <a href="#grades">Grades</a>
+    <a href="#carrieres">Carrières</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-cta">
+    <a class="btn-member" id="lienMembre" href="#" target="_blank" rel="noopener">🍷 Espace membre</a>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="accueil">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker">FlashbackFA · Tongva Hills, San Andreas</span>
+      <h1>Le vin qui fait parler <em>tout San&nbsp;Andreas</em>.</h1>
+      <p class="hero-sub">Depuis les coteaux de Tongva Hills, le domaine Marlowe cultive, vinifie et livre les plus grands crus de l'État. De la vigne au verre, tout se fait chez nous.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#catalogue">Voir le catalogue</a>
+        <a class="btn btn-onDark" href="#carrieres">Rejoindre le domaine</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><b>1957</b><span>Année de fondation</span></div>
+        <div class="hstat"><b>24 h</b><span>Livraison San Andreas</span></div>
+        <div class="hstat"><b>N°1</b><span>Domaine de l'État</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/logo.png" alt="" aria-hidden="true">
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</header>
+
+<main id="contenu">
+
+<!-- ========================== LE DOMAINE ========================= -->
+<section id="domaine">
+  <div class="wrap reveal">
+    <p class="eyebrow">Le Domaine</p>
+    <h2>Trois générations sur les mêmes coteaux</h2>
+    <p class="lede">Marlowe Vineyard n'est pas une usine à bouteilles. C'est un domaine familial de trente hectares posé sur les pentes ensoleillées de Tongva Hills, entre la Route&nbsp;68 et le Grand Chaparral.</p>
+    <p class="lede">Ici, on taille à la main, on vendange à la main, et on goûte chaque cuve avant de la mettre en bouteille. Nos vignerons connaissent chaque rang de vigne par son nom. C'est ce qui explique qu'on retrouve nos étiquettes sur les meilleures tables de Los&nbsp;Santos comme dans les caves de Paleto&nbsp;Bay.</p>
+    <p class="lede">Et parce qu'un grand vin ne vaut rien s'il n'arrive pas à l'heure, nous assurons nous-mêmes la logistique : nos camions partent du chai tous les matins, escortés quand la cargaison le mérite.</p>
+
+    <div class="cards" style="margin-top:3rem">
+      <article class="card">
+        <span class="ico" aria-hidden="true">🍇</span>
+        <h3>Vigne &amp; vendanges</h3>
+        <p>Trente hectares en coteaux, quatre cépages, une seule exigence : ne ramasser que le raisin mûr à point. Les vendanges se font en équipe, du lever du jour à la fraîcheur du soir.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🛢️</span>
+        <h3>Chai &amp; vinification</h3>
+        <p>Pressoir, cuverie inox, fûts de chêne : notre maître de chai suit chaque cuvée jour après jour. L'élevage dure de six mois à trois ans selon le millésime.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🚚</span>
+        <h3>Livraison &amp; escorte</h3>
+        <p>Nos convois desservent tout l'État en moins de 24&nbsp;heures. Escorte armée disponible pour les cargaisons de prestige — un grand cru, ça se protège.</p>
+      </article>
+    </div>
+
+    <div class="steps">
+      <div class="step"><h4>Vendange</h4><p>Les équipes ramassent le raisin à la parcelle et remontent les caisses au chai dans la matinée.</p></div>
+      <div class="step"><h4>Vinification</h4><p>Pressurage, fermentation, assemblage. C'est la semaine où tout se joue.</p></div>
+      <div class="step"><h4>Élevage</h4><p>Repos en cuve ou en fût, dégustations régulières jusqu'à ce que la cuvée soit prête.</p></div>
+      <div class="step"><h4>Expédition</h4><p>Mise en bouteille, étiquetage, chargement du camion et livraison au client.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CATALOGUE ========================= -->
+<section id="catalogue" class="dark-sec">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <p class="eyebrow">Catalogue Produits · Édition 2026</p>
+    <h2>Vins &amp; spiritueux d'exception</h2>
+    <p class="lede">Notre sélection complète de vins, alcools, boissons sans alcool, épicerie fine et objets de collection. Classée par gamme, du plaisir quotidien aux pièces collector.</p>
+
+    <div class="cat-toolbar">
+      <div class="cat-filters" id="catFilters" role="group" aria-label="Filtrer par gamme"></div>
+      <label class="cat-search">
+        <span class="sr-only">Rechercher un produit</span>
+        <input type="search" id="catSearch" placeholder="Rechercher un produit…" autocomplete="off">
+      </label>
+    </div>
+
+    <p class="cat-count" id="catCount" role="status" aria-live="polite"></p>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== CATALOGUE EN IMAGES ====================== -->
+<section id="feuilleter">
+  <div class="wrap reveal">
+    <p class="eyebrow">Le catalogue en images</p>
+    <h2>Feuilleter l'édition 2026</h2>
+    <p class="lede">Les 48 pages du catalogue officiel du domaine. Clique sur une page pour l'agrandir, puis navigue avec les flèches du clavier.</p>
+
+    <div class="pages" id="pages"></div>
+  </div>
+</section>
+
+<!-- Visionneuse plein écran -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visionneuse du catalogue" hidden>
+  <button class="lb-close" id="lbClose" type="button" aria-label="Fermer la visionneuse">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Page précédente"></button>
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Page suivante"></button>
+</div>
+
+<!-- ========================= ORGANISATION ======================== -->
+<section id="organisation">
+  <div class="wrap reveal">
+    <p class="eyebrow">Organisation</p>
+    <h2>Qui fait quoi au domaine</h2>
+    <p class="lede">Une structure courte et lisible : chacun sait à qui s'adresser, personne ne se marche dessus.</p>
+
+    <div class="org">
+      <div class="org-row">
+        <div class="org-card top"><b>Direction</b><span>Propriétaire</span></div>
+        <div class="org-card top"><b>Direction</b><span>Régisseur</span></div>
+      </div>
+      <div class="org-link" aria-hidden="true"></div>
+      <div class="org-row">
+        <div class="org-card"><b>Encadrement</b><span>Maître de chai</span></div>
+        <div class="org-card"><b>Encadrement</b><span>Œnologue</span></div>
+        <div class="org-card"><b>Support</b><span>Comptable</span></div>
+        <div class="org-card"><b>Support</b><span>Ressources humaines</span></div>
+      </div>
+      <div class="org-link" aria-hidden="true"></div>
+      <div class="org-row">
+        <div class="org-card"><b>Terrain</b><span>Chef de culture</span></div>
+        <div class="org-card"><b>Terrain</b><span>Vendangeurs</span></div>
+        <div class="org-card"><b>Commerce</b><span>Resp. commercial</span></div>
+        <div class="org-card"><b>Commerce</b><span>Commerciaux</span></div>
+      </div>
+    </div>
+
+    <blockquote class="quote">
+      « Une bouteille de Marlowe, c'est le travail de vingt personnes que le client ne verra jamais. Notre rôle, à la direction, c'est de faire en sorte que ces vingt personnes aient envie de revenir travailler demain matin. Le reste — les médailles, les records de vente — vient tout seul. »
+      <span class="sig">La Direction · Marlowe Vineyard</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ======================== DEVENIR CLIENT ======================= -->
+<section id="clients">
+  <div class="wrap reveal">
+    <p class="eyebrow">Entreprises &amp; particuliers</p>
+    <h2>Devenir client du domaine</h2>
+    <p class="lede">Bar, restaurant, boîte de nuit, mairie ou simple amateur : nous livrons tout le monde, du carton isolé au réassort hebdomadaire.</p>
+
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="big">50 $</div>
+        <div class="unit">À partir de · HT</div>
+        <p style="color:var(--muted);font-size:.92rem;margin-top:1rem">Le jus de raisin pur ouvre la carte. Les bouteilles courantes vont de 150 $ à 500 $.</p>
+      </div>
+      <div class="price-card">
+        <div class="big">−15 %</div>
+        <div class="unit">Dès la caisse de 12</div>
+        <p style="color:var(--muted);font-size:.92rem;margin-top:1rem">Remise dégressive automatique. Contrat annuel disponible pour les gros volumes.</p>
+      </div>
+      <div class="price-card">
+        <div class="big">24 h</div>
+        <div class="unit">Livraison garantie</div>
+        <p style="color:var(--muted);font-size:.92rem;margin-top:1rem">Sur tout San Andreas, escorte comprise pour les cuvées de prestige et les collectors.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.6rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-gold" href="#contact" id="devisBtn">📞 Demander un devis</a>
+      <a class="btn btn-ghost" href="#catalogue">Parcourir le catalogue</a>
+    </div>
+
+    <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:2.4rem">
+      Notre <b>boutique du vignoble</b> est également ouverte sur place : dégustation, vente au verre et retrait de commande.
+    </p>
+
+    <div class="marquee" aria-label="Ils nous font confiance">
+      <div class="marquee-track" id="marqueeTrack">
+        <span class="chip">Bahama Mamas</span>
+        <span class="chip">Le Chien Méchant</span>
+        <span class="chip">Vanilla Unicorn</span>
+        <span class="chip">Tequi-la-la</span>
+        <span class="chip">Galaxy Nightclub</span>
+        <span class="chip">Diamond Casino</span>
+        <span class="chip">Mairie de San Andreas</span>
+        <span class="chip">Weazel News</span>
+        <span class="chip">Pearls</span>
+        <span class="chip">Burger Shot</span>
+        <span class="chip">Yellow Jack Inn</span>
+        <span class="chip">Hôtel Von Crastenburg</span>
+        <span class="chip">Casino Palace</span>
+        <span class="chip">Paleto Bay Market</span>
+        <span class="chip">Vespucci Beach Club</span>
+        <span class="chip">Los Santos Golf Club</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== GRADES ============================ -->
+<section id="grades" class="dark-sec">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <p class="eyebrow">Carrière</p>
+    <h2>Grades &amp; rémunération</h2>
+    <p class="lede">Tu montes en grade en produisant. Plus ton grade est élevé, plus chaque bouteille te rapporte.</p>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>Grade</th><th>Quota hebdo</th><th>Multiplicateur</th><th>Pour monter</th></tr>
+        </thead>
+        <tbody id="gradeRows"><!-- généré par le script --></tbody>
+      </table>
+    </div>
+
+    <div class="notes">
+      <span class="note">🗓️ Les primes tombent le lundi matin, après la clôture de la semaine.</span>
+      <span class="note">🏆 Podium hebdomadaire : 15 000 $ / 10 000 $ / 5 000 $.</span>
+      <span class="note">🔒 Plafond de prime fixé à 42 500 $ par semaine et par personne.</span>
+    </div>
+
+    <!-- Simulateur -->
+    <div class="simu">
+      <h3>Simule ta prime de la semaine</h3>
+      <p class="hint">Choisis ton grade, fais glisser le nombre de bouteilles produites, et regarde ce que ça donne.</p>
+
+      <div class="grade-pills" id="gradePills" role="group" aria-label="Choix du grade"><!-- généré --></div>
+
+      <div class="slider-row">
+        <input type="range" id="prod" min="0" max="8000" step="50" value="2000"
+               aria-label="Nombre de bouteilles produites cette semaine">
+        <span class="slider-val" id="prodVal">2 000</span>
+      </div>
+
+      <div class="simu-out">
+        <div class="out-box"><span>Quota du grade</span><b id="outQuota">—</b></div>
+        <div class="out-box"><span>Prime estimée</span><b id="outPrime">—</b></div>
+        <div class="out-box"><span>Progression</span><b id="outPct">—</b></div>
+      </div>
+      <p class="simu-msg" id="simuMsg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= RECRUTEMENT ========================= -->
+<section id="carrieres">
+  <div class="wrap reveal">
+    <p class="eyebrow">Carrières</p>
+    <h2>On recrute au domaine</h2>
+    <p class="lede">Pas besoin d'y connaître quoi que ce soit en vin. On forme, on encadre, on récompense. Il faut juste avoir envie.</p>
+
+    <div class="cards" style="margin-top:2.8rem">
+      <article class="card"><span class="ico" aria-hidden="true">📍</span><h3>Tout est sur place</h3><p>Vigne, chai, entrepôt et bureaux sont sur le même domaine. Zéro trajet interminable entre deux points de la carte.</p></article>
+      <article class="card"><span class="ico" aria-hidden="true">💰</span><h3>Payé chaque semaine</h3><p>Salaire de base garanti, plus une prime calculée sur ta production réelle. Tout est transparent dans ton espace membre.</p></article>
+      <article class="card"><span class="ico" aria-hidden="true">📈</span><h3>Évolution rapide</h3><p>Quatre grades, des passerelles vers le commerce, le chai ou l'encadrement. Le mérite passe avant l'ancienneté.</p></article>
+      <article class="card"><span class="ico" aria-hidden="true">🏆</span><h3>Podium hebdo</h3><p>Les trois meilleurs producteurs de la semaine touchent une prime et leur badge sur le Discord du domaine.</p></article>
+      <article class="card"><span class="ico" aria-hidden="true">🧰</span><h3>Matériel fourni</h3><p>Sécateur, caisses, véhicule utilitaire et accès au chai dès ta première semaine. Tu n'avances rien.</p></article>
+      <article class="card"><span class="ico" aria-hidden="true">🍷</span><h3>Ambiance domaine</h3><p>Dégustations, événements privés, soirées vendanges. On travaille sérieusement sans se prendre au sérieux.</p></article>
+    </div>
+
+    <p class="slogan">« Tu plantes. Tu récoltes. Tu progresses. »</p>
+
+    <div class="recruit-grid">
+      <div>
+        <h3>Ce qu'on attend de toi</h3>
+        <ul class="checklist">
+          <li><span><b>Le respect avant tout.</b> Collègues, clients, concurrents : tout le monde est traité correctement. C'est non négociable.</span></li>
+          <li><span><b>De la régularité.</b> Mieux vaut deux sessions calmes par semaine que dix heures d'un coup puis plus rien.</span></li>
+          <li><span><b>Un micro qui fonctionne.</b> On travaille en équipe sur le Discord du domaine.</span></li>
+          <li><span><b>Un personnage cohérent.</b> Pas de RP incohérent sur le domaine, on tient à notre réputation.</span></li>
+          <li><span><b>L'envie d'apprendre.</b> Aucune expérience demandée : on t'apprend tout, de la taille à la vinification.</span></li>
+        </ul>
+      </div>
+
+      <div class="discord-card">
+        <svg viewBox="0 0 71 55" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4a.2.2 0 0 0-.2.1c-.6 1.1-1.3 2.6-1.8 3.7a54 54 0 0 0-16.2 0A37 37 0 0 0 25.5.5a.2.2 0 0 0-.2-.1 58.4 58.4 0 0 0-14.5 4.5.2.2 0 0 0-.1.1C1.6 18.7-1 32.1.3 45.4a.2.2 0 0 0 .1.2 58.8 58.8 0 0 0 17.7 9 .2.2 0 0 0 .3-.1c1.4-1.9 2.6-3.9 3.6-6a.2.2 0 0 0-.1-.3 38.7 38.7 0 0 1-5.5-2.6.2.2 0 0 1 0-.4l1.1-.8a.2.2 0 0 1 .2 0 41.9 41.9 0 0 0 35.6 0 .2.2 0 0 1 .2 0l1.1.9a.2.2 0 0 1 0 .3 36.3 36.3 0 0 1-5.5 2.6.2.2 0 0 0-.1.3c1 2.1 2.2 4.1 3.6 6a.2.2 0 0 0 .3.1 58.6 58.6 0 0 0 17.7-9 .2.2 0 0 0 .1-.2c1.5-15.3-2.5-28.6-10.6-40.4a.2.2 0 0 0-.1-.1zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.6 0 6.5 3.3 6.4 7.2 0 4-2.8 7.2-6.4 7.2zm23.6 0c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.6 0 6.5 3.3 6.4 7.2 0 4-2.8 7.2-6.4 7.2z"/></svg>
+        <h3>La candidature se fait sur Discord</h3>
+        <p>Rejoins le serveur du domaine, ouvre un ticket « Candidature » et remplis le formulaire. Un responsable RH te répond en général dans la journée.</p>
+        <a class="btn btn-gold" id="discordBtn" href="#" target="_blank" rel="noopener" style="margin-top:1rem">Rejoindre le Discord</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CONTACT =========================== -->
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow center">Contact</p>
+    <h2>Parlons de votre commande</h2>
+    <p class="lede" style="margin-inline:auto;text-align:center">Un devis, une livraison urgente, un partenariat, une candidature : il y a toujours quelqu'un au bout du fil.</p>
+    <div class="contact-chips">
+      <a class="cchip" id="discordChip" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 71 55" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4a.2.2 0 0 0-.2.1c-.6 1.1-1.3 2.6-1.8 3.7a54 54 0 0 0-16.2 0A37 37 0 0 0 25.5.5a.2.2 0 0 0-.2-.1 58.4 58.4 0 0 0-14.5 4.5.2.2 0 0 0-.1.1C1.6 18.7-1 32.1.3 45.4a.2.2 0 0 0 .1.2 58.8 58.8 0 0 0 17.7 9 .2.2 0 0 0 .3-.1c1.4-1.9 2.6-3.9 3.6-6a.2.2 0 0 0-.1-.3 38.7 38.7 0 0 1-5.5-2.6.2.2 0 0 1 0-.4l1.1-.8a.2.2 0 0 1 .2 0 41.9 41.9 0 0 0 35.6 0 .2.2 0 0 1 .2 0l1.1.9a.2.2 0 0 1 0 .3 36.3 36.3 0 0 1-5.5 2.6.2.2 0 0 0-.1.3c1 2.1 2.2 4.1 3.6 6a.2.2 0 0 0 .3.1 58.6 58.6 0 0 0 17.7-9 .2.2 0 0 0 .1-.2c1.5-15.3-2.5-28.6-10.6-40.4a.2.2 0 0 0-.1-.1zM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.6 0 6.5 3.3 6.4 7.2 0 4-2.8 7.2-6.4 7.2zm23.6 0c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.6 0 6.5 3.3 6.4 7.2 0 4-2.8 7.2-6.4 7.2z"/></svg>
+        Serveur Discord du domaine
+      </a>
+      <a class="cchip" href="#carrieres">🍇 Postuler au domaine</a>
+      <span class="cchip" id="telChip">📞 Standard : 923</span>
+      <a class="cchip" id="mailChip" href="#">✉️ contact@marlowevineyards.com</a>
+      <a class="cchip" href="https://marlowe-vineyard.mauries-inc.com/">🌐 marlowe-vineyard.mauries-inc.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="foot-mark">MARLOWE VINEYARD</span>
+  Domaine viticole RP sur <b>FlashbackFA</b> · Tongva Hills, San Andreas<br>
+  Site non officiel — aucun lien avec une entreprise réelle. © <span id="year">2026</span> ·
+  <a id="lienMembre2" href="#" target="_blank" rel="noopener">Espace membre</a>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURATION — les seules valeurs à modifier au quotidien
+   ============================================================ */
+const CONFIG = {
+  discord   : "https://discord.gg/CG4gYAEat",
+  telephone : "923",
+  /* Adresse de l'outil de gestion interne.
+     Le jour où l'espace membre aura sa propre adresse en https://
+     (par exemple https://espace.marlowe-vineyard.mauries-inc.com/),
+     il suffit de la remplacer ici — c'est la seule ligne à changer. */
+  espaceMembre : "http://87.91.131.120:20119/",
+  email     : "contact@marlowevineyards.com",
+  siteWeb   : "marlowe-vineyard.mauries-inc.com",
+  grades : [
+    { nom:"Vendangeur",        quota:1500, mult:1,   monter:2000,  couleur:"#8ea63a" },
+    { nom:"Caviste",           quota:2500, mult:1.5, monter:3500,  couleur:"#c9a227" },
+    { nom:"Caviste confirmé",  quota:4000, mult:2,   monter:5500,  couleur:"#d97a2b" },
+    { nom:"Maître de chai",    quota:5500, mult:2.5, monter:null,  couleur:"#d4697a" }
+  ],
+  prixBouteille : 8,      // $ gagnés par bouteille, avant multiplicateur de grade
+  plafondPrime  : 42500   // $ maximum de prime hebdomadaire
+};
+
+/* ============================================================
+   CATALOGUE PRODUITS — Édition 2026
+   Pour ajouter un produit : copie une ligne et change les valeurs.
+     g    = gamme (doit exister dans GAMMES ci-dessous)
+     n    = nom          m = mention (millésime, cépage, poids…)
+     d    = description  p = prix en $        pc = prix collector (facultatif)
+     c    = couleur de la bouteille (facultatif)
+     obj  = true si ce n'est pas une bouteille (peluche, plat, épicerie…)
+   ============================================================ */
+const GAMMES = [
+  { id:'prestige',    label:'Prestige' },
+  { id:'partenariat', label:'Partenariat' },
+  { id:'premium',     label:'Premium' },
+  { id:'decouverte',  label:'Découverte' },
+  { id:'sansalcool',  label:'Sans alcool' },
+  { id:'epicerie',    label:'Épicerie fine' },
+  { id:'menu',        label:'Menu' },
+  { id:'objets',      label:'Objets & accessoires' }
+];
+
+const CATALOGUE = [
+  /* ---------- PRESTIGE ---------- */
+  { g:'prestige', n:"Champagne Ruban Rose", m:"Millésime 2018 · 13,5 % vol.", p:500, c:'#d94f7a',
+    d:"Octobre Rose. Vieilli sous conditions contrôlées, production limitée. Fruits rouges, brioche fine, touche minérale. Finale élégante et persistante." },
+  { g:'prestige', n:"1 An de Plus", m:"Cuvée anniversaire", p:500, c:'#d4a017',
+    d:"Cuvée festive et gourmande, habillée d'or, pour souffler les bougies comme il faut." },
+  { g:'prestige', n:"Toujours et à Jamais", m:"Cuvée mariage", p:500, c:'#b02636',
+    d:"Cuvée raffinée aux notes délicates, pensée pour les grandes déclarations." },
+  { g:'prestige', n:"Révélation", m:"Cuvée événement", p:500, c:'#5aa7d8',
+    d:"Douce et équilibrée, la bouteille bleu et rose des annonces qu'on n'oublie pas." },
+
+  /* ---------- PARTENARIAT ---------- */
+  { g:'partenariat', n:"Vin Shashin-Sutajio", m:"Millésime 2026 · 13,5 % vol.", p:500, pc:10000, c:'#8a7228',
+    d:"Une cuvée née de la rencontre entre l'excellence du domaine et l'univers raffiné de Shashin-Sutajio. Chaque bouteille raconte son histoire." },
+  { g:'partenariat', n:"Vin Umami", m:"Millésime 2026 · 13,5 % vol.", p:500, pc:10000, c:'#8e2230',
+    d:"Crimson Dragon Reserve. Quand le savoir-faire Marlowe rencontre l'élégance de la gastronomie asiatique." },
+  { g:'partenariat', n:"Vin Passerelle Citoyenne", m:"Millésime 2026 · 13,5 % vol.", p:500, pc:10000, c:'#2f5fa8',
+    d:"L'excellence du domaine au service de l'engagement citoyen. Ensemble, vers un avenir meilleur." },
+  { g:'partenariat', n:"Vin Terra Home Déco", m:"Millésime 2026 · 13,5 % vol.", p:500, pc:10000, c:'#6b5a34',
+    d:"Édition signature célébrant l'élégance, le design et l'art de façonner les espaces." },
+  { g:'partenariat', n:"La Dame en Rouge", m:"Édition légende", p:10000, c:'#a8172c',
+    d:"On raconte qu'elle errait entre les vignes au crépuscule, vêtue de rouge, le cœur attaché à un amour perdu. Aujourd'hui son histoire vit dans chaque bouteille." },
+
+  /* ---------- PREMIUM ---------- */
+  { g:'premium', n:"Marlowe Cuvée Impériale", m:"Millésime 2025 · 13,5 % · Merlot & Cabernet Sauvignon", p:500, c:'#2b1c10',
+    d:"Fruits noirs, vanille, épices douces, bois léger. Tanins soyeux et beau potentiel de garde." },
+  { g:'premium', n:"Marlowe Nectar de Vigne", m:"Vin rouge", p:500, c:'#6a1f2b',
+    d:"Rouge profond et structuré, la valeur sûre de la gamme Premium." },
+  { g:'premium', n:"Vin en Amphore", m:"Élevage traditionnel", p:500, c:'#1c1c1a',
+    d:"Élevé en amphore de terre, un caractère unique qu'aucune cuve inox ne sait reproduire." },
+  { g:'premium', n:"Marlowe Signature", m:"Blanc sec", p:500, c:'#3a2a12',
+    d:"Blanc sec raffiné, notes d'agrumes (citron) et de fleurs blanches." },
+  { g:'premium', n:"Champagne Doré", m:"Champagne", p:500, c:'#c9962c',
+    d:"Cuvée élégante et structurée aux bulles fines et raffinées." },
+  { g:'premium', n:"Liqueur de Raisin", m:"Coffret bois", p:500, c:'#9a6fa8',
+    d:"Cuvée artisanale au caractère intense et gourmand. Fruits mûrs, raisin confit, épices douces, légère note boisée." },
+  { g:'premium', n:"Flûte Marlowe Vineyard", m:"Service au verre", obj:true, p:500,
+    d:"Le service à la flûte, gravé aux armes du domaine." },
+
+  /* ---------- DÉCOUVERTE ---------- */
+  { g:'decouverte', n:"La Rose de Minuit", m:"11 % vol. · Nebbiolo", p:500, pc:10000, c:'#7d1f3d',
+    d:"Pétales de rose, cerise noire et framboise sauvage, sublimés par de délicates nuances de cacao. Là où la délicatesse rencontre la profondeur." },
+  { g:'decouverte', n:"Rosé Plaisir", m:"12,5 % vol. · Grenache & Syrah", p:500, c:'#e08a8f',
+    d:"Fraise, groseille, pointe épicée. Bouche fraîche, ronde et gourmande — le convivial par excellence." },
+  { g:'decouverte', n:"Rosé Pamplemousse", m:"7 % vol. · Cinsault & Rolle", p:500, pc:10000, c:'#e79a86',
+    d:"Pamplemousse rose, agrumes frais, pêche blanche et notes florales. Une bouche harmonieusement fruitée." },
+  { g:'decouverte', n:"Champagne Rosé", m:"Champagne", p:500, c:'#d9a08e',
+    d:"Cuvée légère et festive, la bulle qui met tout le monde d'accord." },
+  { g:'decouverte', n:"Vin Arc en Ciel", m:"Édition colorée", p:500, c:'#7b57c9',
+    d:"Fruits exotiques et pêche, dans la bouteille la plus reconnaissable du domaine." },
+  { g:'decouverte', n:"Château Margaux", m:"Sélection 1953", p:500, c:'#4a1220',
+    d:"Fruits noirs, cuir léger, épices fines. Structure souple, parfait pour accompagner un repas." },
+  { g:'decouverte', n:"Grand Cru", m:"Millésime 2019", p:10000, c:'#3a0f18',
+    d:"Fruits noirs, épices, boisé subtil. Structure équilibrée et longue persistance — la pièce de collection de la gamme." },
+  { g:'decouverte', n:"Vin de Glace", m:"Millésime 2025 · vin doux", p:500, c:'#8fb8cf',
+    d:"Vin doux d'exception. Miel, abricot, finale d'une grande longueur." },
+  { g:'decouverte', n:"Grande Réserve", m:"Vin blanc", p:500, c:'#7d7a2e',
+    d:"Souple et gourmand, idéal au quotidien." },
+  { g:'decouverte', n:"Sauterne", m:"Vin blanc liquoreux", p:500, c:'#b58f2e',
+    d:"Fruité et léger, parfait pour l'apéritif." },
+  { g:'decouverte', n:"Vin de Riz", m:"Édition asiatique", p:500, c:'#c8c8bd',
+    d:"Fraîcheur estivale et pureté aromatique, dans un flacon givré." },
+  { g:'decouverte', n:"Abyssale", m:"Élevé sous l'eau · 12 mois · 60 mètres", p:500, c:'#2b6a74',
+    d:"Souple et gourmand, marqué par un vieillissement sous-marin unique. La bouteille sort du fond, la patine avec." },
+  { g:'decouverte', n:"Champagne", m:"Brut", p:150, c:'#2d3a1e',
+    d:"Le champagne de la maison, pour l'apéritif." },
+  { g:'decouverte', n:"Vin Rouge", m:"Au verre ou en bouteille", p:150, c:'#5c1620',
+    d:"Équilibré, parfait pour une dégustation quotidienne." },
+  { g:'decouverte', n:"Verre de Vin Blanc", m:"Service au verre", obj:true, p:150,
+    d:"Blanc sec raffiné. Agrumes, fleurs blanches, finale minérale." },
+
+  /* ---------- SANS ALCOOL ---------- */
+  { g:'sansalcool', n:"Sobrement Pétillant", m:"Sans alcool", p:150, c:'#d8b45c',
+    d:"Vin effervescent sans alcool aux bulles fines et élégantes. Notes de pomme verte et de fleurs blanches." },
+  { g:'sansalcool', n:"Vin sans alcool rosé", m:"Sans alcool", p:150, c:'#bcd8dd',
+    d:"Assemblage délicat de raisins rosés. Fraise fraîche, framboise légère et pétales — équilibre parfait entre fruité et fraîcheur." },
+  { g:'sansalcool', n:"Rêve de Violette", m:"Création signature", obj:true, p:150,
+    d:"Boisson gourmande aux fleurs et à la guimauve, une douceur à siroter." },
+  { g:'sansalcool', n:"Nuage Lavande", m:"Création signature", obj:true, p:150,
+    d:"Création onctueuse et aérienne. Arômes de lavande légère et lait doux." },
+  { g:'sansalcool', n:"Kombuchat", m:"Boisson fermentée", obj:true, p:150,
+    d:"Boisson fermentée au raisin, aux saveurs complexes. Notre petit succès inattendu." },
+  { g:'sansalcool', n:"Mystic Bloom", m:"Création signature", obj:true, p:150,
+    d:"Arômes profonds et envoûtants, fruits rouges et fleurs. Servi sur glace." },
+  { g:'sansalcool', n:"Jus de Raisin", m:"Pur jus", obj:true, p:50,
+    d:"Pur jus de raisin sélectionné. Le produit d'appel du domaine." },
+  { g:'sansalcool', n:"Luxy Grape Soda", m:"Soda pétillant", obj:true, p:150,
+    d:"Pétillant et rafraîchissant, servi long drink avec sa grappe." },
+
+  /* ---------- ÉPICERIE FINE ---------- */
+  { g:'epicerie', n:"Rainui", m:"Chocolat · 200 g", obj:true, p:200,
+    d:"Tablette de chocolat artisanal aux armes du domaine." },
+  { g:'epicerie', n:"Marlowe Caviar", m:"200 g", obj:true, p:200,
+    d:"Caviar de sélection, servi dans son écrin. À accorder avec un blanc minéral ou un Grand Cru." },
+  { g:'epicerie', n:"Chocoraisin", m:"Chocolat au raisin · 150 g", obj:true, p:200,
+    d:"Raisin Ripple Chocolate Bar. Le raisin du domaine enrobé de chocolat." },
+  { g:'epicerie', n:"Perle du Domaine", m:"Huîtres · conservation 0 à +4 °C", obj:true, p:200,
+    d:"Sélection du littoral, dressée sur glace. Accords recommandés : champagne brut, vin blanc minéral ou Cuvée Prestige millésimée." },
+  { g:'epicerie', n:"Violleta", m:"Macarons · 200 g", obj:true, p:200,
+    d:"Macarons à la violette, floraux et délicats." },
+  { g:'epicerie', n:"Plateau Apéro", m:"200 g", obj:true, p:200,
+    d:"Fromages, charcuteries, olives, raisin frais et crackers. Le plateau qui fait durer la soirée." },
+  { g:'epicerie', n:"Raisin d'Amour", m:"200 g", obj:true, p:200,
+    d:"Raisins enrobés façon pomme d'amour, sur brochette." },
+
+  /* ---------- MENU ---------- */
+  { g:'menu', n:"Milanaise & Mystique Bloom", m:"Plat + boisson signature", obj:true, p:350,
+    d:"Viande sélectionnée et préparation maison, accompagnée du Mystique Bloom. Une alliance raffinée entre la douceur de la milanaise et les arômes floraux." },
+  { g:'menu', n:"Grand Cru & Caviar", m:"Accord d'exception", obj:true, p:10000,
+    d:"Le Grand Cru 2019 et son caviar du domaine. Fruits noirs, épices, boisé subtil, longue persistance." },
+  { g:'menu', n:"Vin & Plateau Apéro", m:"Vin rouge ou verre de blanc", obj:true, p:250,
+    d:"Un vin rouge équilibré ou un verre de blanc sec raffiné, accompagné de son plateau d'apéritif." },
+
+  /* ---------- OBJETS & ACCESSOIRES ---------- */
+  { g:'objets', n:"Paquet Marlowe Vineyard", m:"Cigarettes · collection", obj:true, p:200,
+    d:"Le paquet collector vert et or, illustré du domaine." },
+  { g:'objets', n:"Joint CBD Love", m:"Relaxation & style", obj:true, p:200,
+    d:"Feuille imprimée cœurs, édition Saint-Valentin." },
+  { g:'objets', n:"Joint Purple Dream", m:"Relaxation & style", obj:true, p:200,
+    d:"Feuille imprimée grappes, la signature du vignoble." },
+  { g:'objets', n:"Barlot", m:"Peluche · collection 2026", obj:true, p:15000,
+    d:"Ours au caractère doux et gourmand, sa grappe de raisin et son pot de miel. Finitions artisanales." },
+  { g:'objets', n:"Bernadette", m:"Peluche · collection 2026", obj:true, p:15000,
+    d:"Peluche délicate au nœud élégant et à la grappe de raisin, symbole d'authenticité et de finesse." },
+  { g:'objets', n:"Névos", m:"Peluche · Le Trésor des Neiges", obj:true, p:15000,
+    d:"Léopard des neiges emblématique. Pureté, générosité, convivialité — un véritable objet de collection." },
+  { g:'objets', n:"Lila la Loutre", m:"Peluche · L'Élégance des Rives", obj:true, p:15000,
+    d:"Inspirée des cours d'eau qui bordent les terres du domaine. Chapeau de paille et grappe de raisin." },
+  { g:'objets', n:"Racoon Gourmand", m:"Peluche · porte-clés offert", obj:true, p:15000,
+    d:"Raisinou le raton, la gourmandise à l'état pur — quitte à s'en mettre partout. Porte-clés raisin offert." },
+  { g:'objets', n:"Mme St Valentin", m:"Peluche · collection 2025", obj:true, p:10000,
+    d:"Grappe au charme romantique, cœur rouge et nœud rose." },
+  { g:'objets', n:"Mr St Valentin", m:"Peluche · collection 2025", obj:true, p:10000,
+    d:"Grappe verte expressive tenant sa boîte de chocolats en forme de cœur." },
+  { g:'objets', n:"Peluche Raisinou", m:"Peluche · feuilles vertes", obj:true, p:10000,
+    d:"Douce et duveteuse, au design naturel. La mascotte du domaine." },
+  { g:'objets', n:"Diadème", m:"Accessoire · collection 2025", obj:true, p:5000,
+    d:"Accessoire d'exception au design travaillé et lumineux, inspiré des pièces royales." }
+];
+
+/* ------------------------------------------------------------
+   1. Outils
+   ------------------------------------------------------------ */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const nb = n => n.toLocaleString('fr-FR');
+
+/* ------------------------------------------------------------
+   2. Liens Discord + année
+   ------------------------------------------------------------ */
+$('#lienMembre').href  = CONFIG.espaceMembre;
+$('#lienMembre2').href = CONFIG.espaceMembre;
+$('#discordBtn').href  = CONFIG.discord;
+$('#discordChip').href = CONFIG.discord;
+$('#mailChip').href    = 'mailto:' + CONFIG.email;
+$('#mailChip').textContent = '✉️ ' + CONFIG.email;
+$('#telChip').textContent  = '📞 Standard : ' + CONFIG.telephone;
+$('#devisBtn').textContent = '📞 Demander un devis : ' + CONFIG.telephone;
+$('#year').textContent = new Date().getFullYear();
+
+/* ------------------------------------------------------------
+   3. Thème clair / sombre
+   ------------------------------------------------------------ */
+const themeBtn = $('#themeBtn');
+function paintThemeBtn(){
+  const dark = document.documentElement.classList.contains('dark');
+  themeBtn.textContent = dark ? '☀️' : '🌙';
+  themeBtn.setAttribute('aria-label', dark ? 'Passer en thème clair' : 'Passer en thème sombre');
+}
+paintThemeBtn();
+themeBtn.addEventListener('click', () => {
+  const dark = document.documentElement.classList.toggle('dark');
+  try { localStorage.setItem('mv_theme', dark ? 'dark' : 'light'); } catch(e){}
+  paintThemeBtn();
+});
+
+/* ------------------------------------------------------------
+   4. Menu mobile
+   ------------------------------------------------------------ */
+const burger = $('#burger'), navLinks = $('#navLinks');
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+  burger.textContent = open ? '✕' : '☰';
+});
+$$('#navLinks a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.textContent = '☰';
+}));
+
+/* ------------------------------------------------------------
+   5. Barre de navigation qui se densifie au scroll
+   ------------------------------------------------------------ */
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive:true });
+
+/* ------------------------------------------------------------
+   6. Apparition des blocs au scroll
+   ------------------------------------------------------------ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:.12, rootMargin:'0px 0px -60px 0px' });
+$$('.reveal').forEach(el => io.observe(el));
+
+/* ------------------------------------------------------------
+   6 bis. Catalogue : filtres, recherche et affichage
+   ------------------------------------------------------------ */
+const catGrid = $('#catGrid'), catFilters = $('#catFilters'), catCount = $('#catCount'), catSearch = $('#catSearch');
+let gammeActive = 'tout', recherche = '';
+
+// Construction des boutons de filtre (avec le nombre de produits)
+function construireFiltres(){
+  const boutons = [{ id:'tout', label:'Tout le catalogue' }, ...GAMMES];
+  catFilters.innerHTML = '';
+  boutons.forEach(b => {
+    const n = b.id === 'tout' ? CATALOGUE.length : CATALOGUE.filter(p => p.g === b.id).length;
+    if (n === 0) return;
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'cat-pill';
+    el.innerHTML = `${b.label}<span class="n">${n}</span>`;
+    el.setAttribute('aria-pressed', String(b.id === gammeActive));
+    el.addEventListener('click', () => { gammeActive = b.id; construireFiltres(); afficherCatalogue(); });
+    catFilters.appendChild(el);
+  });
+}
+
+function carte(p){
+  const gamme = (GAMMES.find(g => g.id === p.g) || {}).label || '';
+  const couleur = p.c || '#6a5a2e';
+  const visuel = p.obj
+    ? `<span class="ico" style="font-size:1.7rem;margin-top:6px" aria-hidden="true">✦</span>`
+    : `<span class="bottle" style="background:linear-gradient(90deg,${couleur}99,${couleur} 45%,${couleur}aa)" aria-hidden="true"></span>`;
+  return `
+    <article class="prod">
+      <div class="prod-top">
+        ${visuel}
+        <div>
+          <span class="gamme">${gamme}</span>
+          <h3>${p.n}</h3>
+          ${p.m ? `<p class="meta">${p.m}</p>` : ''}
+        </div>
+      </div>
+      <p class="desc">${p.d}</p>
+      <div class="prices">
+        <span class="p1">${nb(p.p)} $</span>
+        ${p.pc ? `<span class="p2">Collector ${nb(p.pc)} $</span>` : ''}
+      </div>
+    </article>`;
+}
+
+function afficherCatalogue(){
+  const q = recherche.trim().toLowerCase();
+  const liste = CATALOGUE.filter(p => {
+    const okGamme = gammeActive === 'tout' || p.g === gammeActive;
+    const okTexte = !q || (p.n + ' ' + (p.m || '') + ' ' + p.d).toLowerCase().includes(q);
+    return okGamme && okTexte;
+  });
+
+  catCount.textContent = liste.length === 0
+    ? 'Aucun produit ne correspond'
+    : `${liste.length} produit${liste.length > 1 ? 's' : ''} affiché${liste.length > 1 ? 's' : ''} sur ${CATALOGUE.length}`;
+
+  catGrid.innerHTML = liste.length
+    ? liste.map(carte).join('')
+    : `<p class="cat-empty">Rien à cet endroit du chai. Essaie un autre mot, ou reviens sur « Tout le catalogue ».</p>`;
+}
+
+catSearch.addEventListener('input', e => { recherche = e.target.value; afficherCatalogue(); });
+construireFiltres();
+afficherCatalogue();
+
+/* ------------------------------------------------------------
+   6 ter. Catalogue en images + visionneuse plein écran
+   ------------------------------------------------------------ */
+const PAGES = [
+  "Couverture — Édition 2026", "Le domaine", "Gamme Prestige", "Champagne Ruban Rose",
+  "Cuvées événement", "Gamme Partenariat", "Vin Shashin-Sutajio", "Vin Umami",
+  "Vin Passerelle Citoyenne", "Vin Terra Home Déco", "Gamme Premium", "Marlowe Cuvée Impériale",
+  "Nectar de Vigne · Amphore · Signature", "Champagne Doré · Liqueur · Flûte", "Gamme Découverte",
+  "La Rose de Minuit", "Rosé Plaisir", "Rosé Pamplemousse",
+  "Champagne Rosé · Arc en Ciel · Château Margaux", "Grand Cru · Vin de Glace · Grande Réserve",
+  "Sauterne · Vin de Riz · Abyssale", "Champagne · Vin Rouge · Verre de Blanc",
+  "Boissons sans alcool", "Sobrement Pétillant · Vin sans alcool",
+  "Rêve de Violette · Nuage Lavande · Kombuchat", "Mystic Bloom · Jus de Raisin · Luxy Grape Soda",
+  "La boutique", "Rainui · Caviar · Chocoraisin", "Perle du Domaine",
+  "Violleta · Plateau Apéro · Raisin d'Amour", "Cigarettes & joints CBD", "Le menu",
+  "Milanaise & Mystique Bloom", "Grand Cru & Caviar · Vin & Plateau", "Notre boutique du vignoble",
+  "Contactez-nous", "Catalogue Object", "Notre univers", "La Dame en Rouge",
+  "Barlot", "Bernadette", "Névos", "Lila la Loutre", "Racoon Gourmand",
+  "Mme St Valentin", "Mr St Valentin", "Peluche Raisinou", "Diadème"
+];
+const num2 = n => String(n).padStart(2, '0');
+
+$('#pages').innerHTML = PAGES.map((titre, i) => `
+  <button class="page-btn" type="button" data-i="${i}">
+    <span class="num">Page ${num2(i + 1)}</span>
+    <img src="assets/catalogue/thumb/p${num2(i + 1)}.jpg" alt="Page ${i + 1} du catalogue : ${titre}" loading="lazy" width="440" height="248">
+    <figcaption>${titre}</figcaption>
+  </button>`).join('');
+
+const lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'),
+      lbPrev = $('#lbPrev'), lbNext = $('#lbNext');
+let pageActive = 0, dernierFocus = null;
+
+function ouvrir(i){
+  pageActive = Math.max(0, Math.min(PAGES.length - 1, i));
+  lbImg.src = `assets/catalogue/full/p${num2(pageActive + 1)}.jpg`;
+  lbImg.alt = `Page ${pageActive + 1} du catalogue : ${PAGES[pageActive]}`;
+  lbCap.innerHTML = `<b>Page ${num2(pageActive + 1)} / ${PAGES.length}</b> ${PAGES[pageActive]}`;
+  lbPrev.disabled = pageActive === 0;
+  lbNext.disabled = pageActive === PAGES.length - 1;
+  if (lb.hidden){
+    dernierFocus = document.activeElement;
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('#lbClose').focus();
+  }
+  // Préchargement discret de la page suivante
+  if (pageActive + 1 < PAGES.length) new Image().src = `assets/catalogue/full/p${num2(pageActive + 2)}.jpg`;
+}
+function fermer(){
+  lb.hidden = true;
+  document.body.style.overflow = '';
+  if (dernierFocus) dernierFocus.focus();
+}
+
+$('#pages').addEventListener('click', e => {
+  const b = e.target.closest('.page-btn');
+  if (b) ouvrir(+b.dataset.i);
+});
+$('#lbClose').addEventListener('click', fermer);
+lbPrev.addEventListener('click', () => ouvrir(pageActive - 1));
+lbNext.addEventListener('click', () => ouvrir(pageActive + 1));
+lb.addEventListener('click', e => { if (e.target === lb) fermer(); });
+document.addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape')     fermer();
+  if (e.key === 'ArrowLeft')  ouvrir(pageActive - 1);
+  if (e.key === 'ArrowRight') ouvrir(pageActive + 1);
+});
+
+/* ------------------------------------------------------------
+   7. Bandeau défilant : on duplique pour boucler sans couture
+   ------------------------------------------------------------ */
+const track = $('#marqueeTrack');
+track.innerHTML += track.innerHTML;
+
+/* ------------------------------------------------------------
+   8. Tableau des grades + simulateur de prime
+   ------------------------------------------------------------ */
+const rows = $('#gradeRows'), pills = $('#gradePills');
+
+CONFIG.grades.forEach((g, i) => {
+  rows.insertAdjacentHTML('beforeend', `
+    <tr>
+      <td><span class="badge" style="background:${g.couleur}22;color:${g.couleur};border:1px solid ${g.couleur}55">${g.nom}</span></td>
+      <td>${nb(g.quota)} bouteilles</td>
+      <td>×${String(g.mult).replace('.', ',')}</td>
+      <td>${g.monter ? nb(g.monter) + ' bouteilles' : 'Grade maximum'}</td>
+    </tr>`);
+
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'gpill';
+  b.textContent = g.nom;
+  b.setAttribute('aria-pressed', String(i === 0));
+  b.addEventListener('click', () => { gradeActif = i; refreshPills(); calcul(); });
+  pills.appendChild(b);
+});
+
+let gradeActif = 0;
+function refreshPills(){
+  $$('.gpill', pills).forEach((b, i) => b.setAttribute('aria-pressed', String(i === gradeActif)));
+}
+
+const prod = $('#prod'), prodVal = $('#prodVal'), msg = $('#simuMsg');
+
+function calcul(){
+  const g = CONFIG.grades[gradeActif];
+  const q = +prod.value;
+
+  prodVal.textContent = nb(q);
+  prod.style.setProperty('--pct', (q / prod.max * 100) + '%');
+
+  const brut    = q * CONFIG.prixBouteille * g.mult;
+  const prime   = Math.min(brut, CONFIG.plafondPrime);
+  const pct     = Math.min(100, Math.round(q / g.quota * 100));
+
+  $('#outQuota').textContent = nb(g.quota);
+  $('#outPrime').textContent = nb(prime) + ' $';
+  $('#outPct').textContent   = pct + ' %';
+
+  if (q < g.quota){
+    msg.textContent = `❌ Quota non atteint — il te manque ${nb(g.quota - q)} bouteilles pour valider ta semaine.`;
+  } else if (brut > CONFIG.plafondPrime){
+    msg.textContent = `🔒 Plafond atteint : la prime est bloquée à ${nb(CONFIG.plafondPrime)} $ par semaine.`;
+  } else if (g.monter && q >= g.monter){
+    msg.textContent = `🏅 Quota validé, et tu dépasses le seuil de montée en grade. Passage en ${CONFIG.grades[gradeActif + 1].nom} envisageable !`;
+  } else {
+    msg.textContent = `✅ Quota validé. Belle semaine.`;
+  }
+}
+prod.addEventListener('input', calcul);
+calcul();
+
+/* ------------------------------------------------------------
+   9. Décor animé du hero : coteaux, rangs de vigne et lumière
+   ------------------------------------------------------------ */
+(function heroScene(){
+  const cv  = $('#heroCanvas');
+  const ctx = cv.getContext('2d');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let W = 0, H = 0, dpr = 1, motes = [];
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    motes = Array.from({ length: Math.round(W / 26) }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.7 + .4,
+      s: Math.random() * .22 + .05,
+      a: Math.random() * Math.PI * 2
+    }));
+  }
+
+  // Une colline : courbe douce dessinée sur toute la largeur
+  function hill(yBase, amp, phase, color){
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+    for (let x = 0; x <= W; x += 8){
+      const y = yBase + Math.sin(x / W * Math.PI * 1.6 + phase) * amp
+                      + Math.sin(x / W * Math.PI * 4.2 + phase * 1.7) * (amp * .28);
+      ctx.lineTo(x, y);
+    }
+    ctx.lineTo(W, H);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  // Rangs de vigne en perspective sur la colline du premier plan
+  function vineRows(yBase, t){
+    ctx.save();
+    ctx.globalAlpha = .5;
+    ctx.strokeStyle = 'rgba(6,20,16,.85)';
+    for (let i = 0; i < 16; i++){
+      const p  = i / 15;
+      const y0 = yBase + p * (H - yBase) * .95;
+      const w  = 60 + p * 300;
+      ctx.lineWidth = .7 + p * 2.6;
+      ctx.beginPath();
+      for (let x = -w; x <= W + w; x += 14){
+        const drift = Math.sin((x + t * 12) / 130 + i) * (2 + p * 5);
+        ctx.lineTo(x, y0 + drift);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function frame(now){
+    const t = reduce ? 0 : now / 1000;
+
+    // Ciel : aube dorée au-dessus des coteaux
+    const sky = ctx.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0,   '#08211b');
+    sky.addColorStop(.34, '#12362c');
+    sky.addColorStop(.58, '#5a5227');
+    sky.addColorStop(.72, '#b9903c');
+    sky.addColorStop(.86, '#0f2f26');
+    sky.addColorStop(1,   '#061713');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, W, H);
+
+    // Soleil bas, halo doré
+    const sx = W * .74, sy = H * .60;
+    const halo = ctx.createRadialGradient(sx, sy, 0, sx, sy, Math.max(W, H) * .42);
+    halo.addColorStop(0,  'rgba(255,224,150,.55)');
+    halo.addColorStop(.3, 'rgba(230,201,118,.16)');
+    halo.addColorStop(1,  'rgba(230,201,118,0)');
+    ctx.fillStyle = halo;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.beginPath();
+    ctx.arc(sx, sy, Math.min(W, H) * .045, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,236,183,.9)';
+    ctx.fill();
+
+    // Trois plans de coteaux, du plus lointain au plus proche
+    hill(H * .60, H * .045, t * .05,        'rgba(9,44,35,.85)');
+    hill(H * .70, H * .055, t * .07 + 1.7,  'rgba(7,34,27,.95)');
+    hill(H * .80, H * .050, t * .09 + 3.4,  '#061a15');
+
+    vineRows(H * .80, t);
+
+    // Poussière lumineuse
+    motes.forEach(m => {
+      if (!reduce){
+        m.y -= m.s;
+        m.a += .02;
+        m.x += Math.sin(m.a) * .25;
+        if (m.y < -6){ m.y = H + 6; m.x = Math.random() * W; }
+      }
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(240,214,150,${.15 + Math.sin(m.a) * .12})`;
+      ctx.fill();
+    });
+
+    if (!document.hidden) requestAnimationFrame(frame);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(frame); });
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
